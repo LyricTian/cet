@@ -11,7 +11,7 @@ $ go get -u github.com/LyricTian/cet
 ```
 
 ``` go
-result, err := cet.Query(nil, "370150162100718", "张伟")
+result, err := cet.Query(nil, "370150162100108", "张三")
 if err != nil {
     panic(err)
 }
@@ -26,6 +26,16 @@ fmt.Println("阅读：", result.Reading)
 fmt.Println("写作和翻译：", result.WritingTranslation)
 fmt.Println("口试准考证号：", result.OralTicket)
 fmt.Println("口试等级：", result.OralLevel)
+```
+
+## 使用命令行工具
+
+```
+$ go get github.com/LyricTian/cet/cmd/cet
+```
+
+```
+$ cet -name '张三' -ticket '370150162100108'
 ```
 
 ## MIT License

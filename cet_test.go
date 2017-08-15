@@ -9,20 +9,10 @@ import (
 )
 
 func TestQuery(t *testing.T) {
-	Convey("cet query test", t, func() {
-		querier := cet.NewQuerier()
-
-		result, err := querier.Query(nil, "370150162100708", "张新伟")
-		So(err, ShouldBeNil)
-		So(result, ShouldNotBeNil)
-		So(result.University, ShouldEqual, "山东体育学院济南校区")
-		So(result.Score, ShouldEqual, 403)
-	})
-
 	Convey("cet query not found test", t, func() {
 		querier := cet.NewQuerier()
 
-		result, err := querier.Query(nil, "370150162100718", "张伟")
+		result, err := querier.Query(nil, "370150162100108", "张三")
 		So(err, ShouldEqual, cet.ErrNotFound)
 		So(result, ShouldBeNil)
 	})
